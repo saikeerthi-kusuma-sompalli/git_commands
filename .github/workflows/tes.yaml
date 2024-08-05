@@ -1,0 +1,15 @@
+name: xxxxx
+
+on:
+  push:
+    branch: [  master  ]
+jobs:
+  Flask:
+    runs-on: linux
+
+
+    steps:
+      - name: Executing the commands
+        run:  |
+           pwd
+           pip install -r re.txt
