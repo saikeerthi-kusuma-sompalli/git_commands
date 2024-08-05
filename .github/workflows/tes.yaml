@@ -7,7 +7,7 @@ on:
 
 jobs:
   Flask:
-    runs-on: ubuntu-latest  # It’s a good practice to specify the latest version of Ubuntu
+    runs-on: linux  # It’s a good practice to specify the latest version of Ubuntu
 
     steps:
       - name: Checkout code
