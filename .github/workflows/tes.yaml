@@ -2,14 +2,27 @@ name: xxxxx
 
 on:
   push:
-    branch: [  master  ]
+    branches: 
+      - master  # 'branch' should be 'branches' and should not be in brackets
+
 jobs:
   Flask:
-    runs-on: linux
-
+    runs-on: ubuntu-latest  # It’s a good practice to specify the latest version of Ubuntu
 
     steps:
-      - name: Executing the commands
-        run:  |
-           pwd
-           pip install -r re.txt
+      - name: Checkout code
+        uses: actions/checkout@v2  # Add this step to check out your code
+
+      - name: Set up Python
+        uses: actions/setup-python@v2  # Set up Python
+        with:
+          python-version: '3.9'  # Specify your Python version
+
+      - name: Install dependencies
+        run: |
+          pip install -r re.txt  # Correct the filename if necessary (make sure it's 'requirements.txt')
+
+      - name: Execute commands
+        run: |
+          pwd
+          # Add any additional commands you want to run here
